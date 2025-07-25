@@ -1,0 +1,370 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation: Part 1</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #63a9da, #00d0ff);
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #ffffff10;
+        padding: 30px;
+        border-radius: 10px;
+        border: 2px solid white;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .list-items {
+        background-color: white;
+        color: black;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-heading">Favourite Movie Franchise</h1>
+      <ul>
+        <li class="list-items">
+          <span>Neo</span>
+          The Matrix
+        </li>
+        <li class="list-items">Star Wars</li>
+        <li class="list-items">Harry Potter</li>
+        <li class="list-items">Lord of the Rings</li>
+        <li class="list-items">Marvel</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1 id="main-heading">Favourite Sports</h1>
+      <ul>
+        <li class="list-items">The Matrix</li>
+        <li class="list-items">Star Wars</li>
+        <li class="list-items">Harry Potter</li>
+        <li class="list-items">Lord of the Rings</li>
+        <li class="list-items">Marvel</li>
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Listeners</title>
+    <style>
+      body {
+        background-color: #1e2a38;
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        gap: 30px;
+      }
+
+      .boxes {
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 12px;
+        padding: 20px;
+        width: 150px;
+        text-align: center;
+      }
+
+      h1#main-heading {
+        margin-bottom: 40px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 8px 16px;
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #1e2a38;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-heading">Event Listeners</h1>
+
+    <div class="container">
+      <div class="boxes box-1">
+        <h1 id="heading">Example 1</h1>
+        <button onclick="alert('I Love JavaScript')">Enter</button>
+      </div>
+      <div class="boxes box-2">
+        <h1 id="heading">Example 2</h1>
+        <button class="btn-2">Enter</button>
+      </div>
+      <div class="boxes box-3">
+        <h1 id="heading">Example 3</h1>
+        <button class="btn-3">Enter</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master DOM Manipulation: Part 1</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom, #0f1e26, #2f4f63);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      #main-heading {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+
+      .container {
+        background-color: #1a2b3a;
+        border-radius: 10px;
+        padding: 60px 30px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .boxes {
+        margin-top: 20px;
+      }
+
+      button {
+        background: transparent;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px 20px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #1a2b3a;
+      }
+
+      div {
+        font-size: 0.95rem;
+      }
+
+      .hidden-content {
+        display: none;
+        margin-top: 25px;
+      }
+
+      .hidden-content.reveal-btn {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-heading">Event Listeners</h1>
+
+    <div class="container">
+      <button class="reveal-btn">Reveal More</button>
+      <div class="hidden-content boxes">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio
+        hic facilis, repudiandae incidunt quisquam neque officiis quibusdam cum
+        quam suscipit dolorem animi aliquid harum.
+      </div>
+    </div>
+
+    <script>
+      const btn = document.querySelector(".reveal-btn");
+      const content = document.querySelector(".hidden-content");
+
+      btn.addEventListener("click", () => {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          btn.textContent = "Reveal More";
+        } else {
+          content.style.display = "block";
+          btn.textContent = "Hide";
+        }
+      });
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to top, #1c3a52, #26394c);
+      }
+
+      .div2 {
+        border: 4px solid white;
+        padding: 50px;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .div1 {
+        border: 4px solid white;
+        padding: 50px;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .button {
+        font-size: 30px;
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: solid 3px #fff;
+        background: none;
+        color: #fff;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div2">
+      2
+      <div class="div1">
+        1
+        <br />
+        <a href="" class="button">Click</a>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to top, #1c3a52, #26394c);
+      }
+
+      #sports {
+        list-style: none;
+        padding: 20px;
+        border: 4px solid white;
+        border-radius: 10px;
+        width: 200px;
+      }
+
+      #sports li {
+        border: 2px solid white;
+        margin: 10px 0;
+        padding: 10px;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      #sports li:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="sports">
+      <li id="football">Football</li>
+      <li id="basketball">basketball</li>
+      <li id="boxing">boxing</li>
+      <li id="tennis">tennis</li>
+      <li id="golf">golf</li>
+    </ul>
+
+    <script src="app.js"></script>
+  </body>
+</html>
